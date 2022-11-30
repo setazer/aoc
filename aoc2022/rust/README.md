@@ -1,0 +1,1 @@
+Solutions for AOC2022 in Rust using https://github.com/gobanos/cargo-aoc
