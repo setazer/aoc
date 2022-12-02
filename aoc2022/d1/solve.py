@@ -18,7 +18,7 @@ class DayPart1(AoCFramework):
 
 10000''', 24000),
     )
-    known_result = None
+    known_result = 70116
 
     def go(self):
         elves_raw = self.puzzle_input.split('\n\n')
@@ -33,7 +33,7 @@ class DayPart2(AoCFramework):
     test_cases = (
         # ('', ),
     )
-    known_result = None
+    known_result = 206582
 
     def go(self):
         elves_raw = self.puzzle_input.split('\n\n')

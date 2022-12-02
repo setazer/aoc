@@ -1,8 +1,13 @@
 
 type SolutionType = i32;
 
-#[aoc_generator(day1)]
-pub fn input_generator(input: &str) -> Vec<SolutionType> {
+#[aoc_generator(day1, part1)]
+pub fn input_generator_part1(input: &str) -> Vec<SolutionType> {
+    input.lines()
+}
+
+#[aoc_generator(day1, part2)]
+pub fn input_generator_part2(input: &str) -> Vec<SolutionType> {
     input.lines()
 }
 
