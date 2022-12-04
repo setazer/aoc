@@ -1,9 +1,9 @@
 
-type SolutionType = i32;
+type SolutionType = usize;
 
 pub struct Range{
-    start: i32,
-    end: i32,
+    start: usize,
+    end: usize,
 }
 
 impl Range {
@@ -21,9 +21,7 @@ impl Range {
     fn intersects(&self, other: &Range) -> bool {
         other.contains(self)
         || self.contains(other)
-        || (self.start <= other.start && other.start <= self.end)
         || (self.start <= other.end && other.end <= self.end)
-        || (other.start <= self.start && self.start <= other.end)
         || (other.start <= self.end && self.end <= other.end)
     }
 }
@@ -40,12 +38,12 @@ pub fn input_generator(input: &str) -> Vec<(Range,Range)> {
 
 #[aoc(day4, part1)]
 pub fn part1(data: &[(Range, Range)]) -> SolutionType {
-    data.iter().map(|(r1,r2)| (r1.contains(&r2) || r2.contains(&r1)) as i32).sum()
+    data.iter().map(|(r1,r2)| (r1.contains(&r2) || r2.contains(&r1))).filter(|&x| x).count()
 }
 
 #[aoc(day4, part2)]
 pub fn part2(data: &[(Range, Range)]) -> SolutionType {
-    data.iter().map(|(r1,r2)| r1.intersects(&r2) as i32).sum()
+    data.iter().map(|(r1,r2)| r1.intersects(&r2)).filter(|&x| x).count()
 }
 
 #[cfg(test)]

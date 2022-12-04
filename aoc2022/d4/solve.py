@@ -22,9 +22,7 @@ class Range:
             return (
                     other in self
                     or self in other
-                    or self.start <= other.start <= self.end
                     or self.start <= other.end <= self.end
-                    or other.start <= self.start <= other.end
                     or other.start <= self.end <= other.end
             )
 
