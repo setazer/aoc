@@ -23,16 +23,16 @@ pub fn part2(data: &[SolutionType]) -> SolutionType {
 
 #[cfg(test)]
 mod tests {
-    use super::{input_generator, part1, part2};
+    use super::{input_generator_part1, input_generator_part2, part1, part2};
     const TEST_INPUT:&str = "";
 
     #[test]
     fn sample1() {
-        assert_eq!(part1(&input_generator(TEST_INPUT)) , 0);
+        assert_eq!(part1(&input_generator_part1(TEST_INPUT)) , 0);
     }
 
     #[test]
     fn sample2() {
-        assert_eq!(part2(&input_generator(TEST_INPUT)), 0);
+        assert_eq!(part2(&input_generator_part2(TEST_INPUT)), 0);
     }
 }
