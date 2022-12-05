@@ -34,7 +34,7 @@ DayPart1()
 
 class DayPart2(AoCFramework):
     test_cases = (
-        # ('', ),
+        ('', ),
     )
     known_result = None
 

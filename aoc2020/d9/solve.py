@@ -13,7 +13,7 @@ def check_number(number, preamble_numbers):
 
 class DayPart1(AoCFramework):
     test_cases = (
-        # ('', ),
+        ('', ),
     )
     known_result = 32321523
 
@@ -33,7 +33,7 @@ DayPart1()
 
 class DayPart2(AoCFramework):
     test_cases = (
-        # ('', ),
+        ('', ),
     )
     known_result = 4794981
 
