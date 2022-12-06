@@ -28,7 +28,7 @@ pub fn part2(input: &str) -> SolutionType {
     for chunk in data.chunks_exact(3) {
         let elem = chunk.iter()
             .map(|&x| x.chars().collect::<HashSet<_>>())
-            .reduce(|set1, set2| set1.intersection( &set2).map(|&x| x).collect()).unwrap();
+            .reduce(|set1, set2| set1.intersection( &set2).copied().collect()).unwrap();
         sum+=PRIORITY.find(*elem.iter().next().unwrap()).unwrap() as i32;
     }
     sum

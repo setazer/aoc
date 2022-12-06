@@ -6,7 +6,7 @@ pub fn input_generator(input: &str) -> Vec<SolutionType> {
     let elves_data: Vec<&str> = input.split("\n\n").collect();
     let elves_data: Vec<SolutionType> = elves_data.iter()
         .map(|x| x
-            .split("\n")
+            .split('\n')
             .map(|x|x.parse::<SolutionType>().unwrap())
             .sum())
         .collect();

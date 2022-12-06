@@ -46,7 +46,7 @@ impl FromStr for Ship {
             if &line[..3] == " 1 " { continue };
             for (col, idx) in (0..line.len()).step_by(4).enumerate() {
                 let ship_crate = &line[idx..idx+3];
-                if ship_crate.trim().len() == 0 { continue };
+                if ship_crate.trim().is_empty() { continue };
                 warehouse[col].push(ship_crate.chars().nth(1).unwrap());
             }
         }

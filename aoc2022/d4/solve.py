@@ -20,9 +20,7 @@ class Range:
     def __and__(self, other):
         if isinstance(other, Range):
             return (
-                    other in self
-                    or self in other
-                    or self.start <= other.end <= self.end
+                    self.start <= other.end <= self.end
                     or other.start <= self.end <= other.end
             )
 
