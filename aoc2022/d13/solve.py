@@ -1,15 +1,65 @@
+from itertools import zip_longest, pairwise
+
 from aocframework import AoCFramework
+
+
+def is_valid(iter1, iter2):
+    for item1, item2 in zip_longest(iter1, iter2):
+        if item1 == item2:
+            continue
+        if item1 is None:
+            return True
+        if item2 is None:
+            return False
+        if isinstance(item1, int) and isinstance(item2, int):
+            return item1 < item2
+        if isinstance(item1, int) and isinstance(item2, list):
+            result = is_valid([item1], item2)
+        elif isinstance(item1, list) and isinstance(item2, int):
+            result = is_valid(item1, [item2])
+        else:
+            result = is_valid(item1, item2)
+        if result is not None:
+            return result
 
 
 class DayPart1(AoCFramework):
     test_cases = (
-        ('', ),
+        ('''[1,1,3,1,1]
+[1,1,5,1,1]
+
+[[1],[2,3,4]]
+[[1],4]
+
+[9]
+[[8,7,6]]
+
+[[4,4],4,4]
+[[4,4],4,4,4]
+
+[7,7,7,7]
+[7,7,7]
+
+[]
+[3]
+
+[[[]]]
+[[]]
+
+[1,[2,[3,[4,[5,6,7]]]],8,9]
+[1,[2,[3,[4,[5,6,0]]]],8,9]''', 13),
     )
     known_result = None
 
     def go(self):
-        raw_split = self.linesplitted
-        return
+        pairs = self.raw_puzzle_input.split('\n\n')
+        sum = 0
+        for i,pair in enumerate(pairs,1):
+            iter1 = eval(pair.partition('\n')[0])
+            iter2 = eval(pair.partition('\n')[-1])
+            if is_valid(iter1, iter2):
+                sum+=i
+        return sum
 
 
 DayPart1()
@@ -17,13 +67,54 @@ DayPart1()
 
 class DayPart2(AoCFramework):
     test_cases = (
-        ('', ),
+        ('''[1,1,3,1,1]
+[1,1,5,1,1]
+
+[[1],[2,3,4]]
+[[1],4]
+
+[9]
+[[8,7,6]]
+
+[[4,4],4,4]
+[[4,4],4,4,4]
+
+[7,7,7,7]
+[7,7,7]
+
+[]
+[3]
+
+[[[]]]
+[[]]
+
+[1,[2,[3,[4,[5,6,7]]]],8,9]
+[1,[2,[3,[4,[5,6,0]]]],8,9]''', 140),
     )
     known_result = None
 
     def go(self):
-        raw_split = self.linesplitted
-        return
+        data = [eval(item) for item in self.raw_puzzle_input.split('\n') if item.strip()]
+        extra_packets = [[[2]],[[6]]]
+        data.extend(extra_packets)
+        prod = 1
+        self.sort_data(data)
+
+        for i, item in enumerate(data):
+            if item in extra_packets:
+                prod *= i+1
+        return prod
+
+    def sort_data(self, data):
+        sort_finished = False
+        while not sort_finished:
+            for i, (item1, item2) in enumerate(pairwise(data.copy())):
+                if is_valid(item1, item2):
+                    continue
+                data[i], data[i + 1] = data[i + 1], data[i]
+                break
+            else:
+                sort_finished = True
 
 
 DayPart2()
