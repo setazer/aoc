@@ -1,4 +1,5 @@
-from itertools import zip_longest, pairwise
+from functools import cmp_to_key
+from itertools import zip_longest
 
 from aocframework import AoCFramework
 
@@ -98,23 +99,17 @@ class DayPart2(AoCFramework):
         extra_packets = [[[2]],[[6]]]
         data.extend(extra_packets)
         prod = 1
-        self.sort_data(data)
-
-        for i, item in enumerate(data):
+        result = sorted(data, key=cmp_to_key(self.my_cmp))
+        for i, item in enumerate(result):
             if item in extra_packets:
                 prod *= i+1
         return prod
 
-    def sort_data(self, data):
-        sort_finished = False
-        while not sort_finished:
-            for i, (item1, item2) in enumerate(pairwise(data.copy())):
-                if is_valid(item1, item2):
-                    continue
-                data[i], data[i + 1] = data[i + 1], data[i]
-                break
-            else:
-                sort_finished = True
+    def my_cmp(self, a, b):
+        result = is_valid(a, b)
+        if result is None:
+            return 0
+        return -1 if result else 1
 
 
 DayPart2()
