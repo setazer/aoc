@@ -23,7 +23,7 @@ def next_and_prev(seat):
 
 class DayPart1(AoCFramework):
     test_cases = (
-        ('', ),
+        ("""""", ),
     )
     known_result = 901
 
@@ -37,7 +37,7 @@ DayPart1()
 
 class DayPart2(AoCFramework):
     test_cases = (
-        ('', ),
+        ("""""", ),
     )
     known_result = 661
 
