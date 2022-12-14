@@ -102,11 +102,7 @@ pub fn part2(data: &(Ship, Vec<Action>)) -> SolutionType {
 
 #[cfg(test)]
 mod tests {
-    use super::{
-        input_generator,
-        part1,
-        part2,
-    };
+    use super::*;
     const TEST_INPUT:&str = "    [D]
 [N] [C]
 [Z] [M] [P]

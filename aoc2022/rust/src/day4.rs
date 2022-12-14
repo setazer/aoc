@@ -46,11 +46,7 @@ pub fn part2(data: &[(Range, Range)]) -> SolutionType {
 
 #[cfg(test)]
 mod tests {
-    use super::{
-        input_generator,
-        part1,
-        part2,
-    };
+    use super::*;
     const TEST_INPUT:&str = "2-4,6-8
 2-3,4-5
 5-7,7-9

@@ -131,7 +131,7 @@ pub fn part2(data: &[(Shape, Outcome)]) -> SolutionType {
 
 #[cfg(test)]
 mod tests {
-    use super::{input_generator_part1, input_generator_part2, part1, part2};
+    use super::*;
     const TEST_INPUT:&str = "A Y
 B X
 C Z";

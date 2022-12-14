@@ -27,7 +27,7 @@ pub fn part2(data: &[SolutionType]) -> SolutionType {
 
 #[cfg(test)]
 mod tests {
-    use super::{input_generator, part1, part2};
+    use super::*;
     const TEST_INPUT:&str = "1000
 2000
 3000

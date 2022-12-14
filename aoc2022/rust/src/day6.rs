@@ -27,7 +27,7 @@ pub fn part2(input: &str) -> SolutionType {
 
 #[cfg(test)]
 mod tests {
-    use super::{part1, part2};
+    use super::*;
 
     #[test]
     fn sample1() {
@@ -39,7 +39,7 @@ mod tests {
             ("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 11),
         ];
         for (test_input, expected) in test_cases {
-                    assert_eq!(part1(test_input) , expected);
+            assert_eq!(part1(test_input) , expected);
         }
     }
 
@@ -53,7 +53,7 @@ mod tests {
             ("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 26),
         ];
         for (test_input, expected) in test_cases {
-                    assert_eq!(part2(test_input) , expected);
+            assert_eq!(part2(test_input) , expected);
         }
     }
 }

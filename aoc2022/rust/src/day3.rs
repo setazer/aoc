@@ -36,10 +36,7 @@ pub fn part2(input: &str) -> SolutionType {
 
 #[cfg(test)]
 mod tests {
-    use super::{
-         part1,
-         part2,
-    };
+    use super::*;
     const TEST_INPUT:&str = "vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
 PmmdzqPrVvPwwTWBwg
