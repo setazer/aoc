@@ -45,8 +45,8 @@ class DayPart1(AoCFramework):
     def go(self):
         raw_split: str = self.linesplitted
         self.field = {(i, j): char for i, row in enumerate(raw_split) for j, char in enumerate(row)}
-        max_x = len(self.linesplitted[0])
-        max_y = len(self.linesplitted)
+        max_x = len(self.linesplitted)
+        max_y = len(self.linesplitted[0])
         numbers = []
         for i in range(max_x):
             parsed_number = ''
@@ -89,8 +89,8 @@ class DayPart2(AoCFramework):
     def go(self):
         raw_split: str = self.linesplitted
         self.field = {(i, j): char for i, row in enumerate(raw_split) for j, char in enumerate(row)}
-        max_x = len(self.linesplitted[0])
-        max_y = len(self.linesplitted)
+        max_x = len(self.linesplitted)
+        max_y = len(self.linesplitted[0])
         numbers = []
         for i in range(max_x):
             parsed_number = ''
