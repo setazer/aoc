@@ -34,7 +34,7 @@ class DayPart1(AoCFramework):
 ...$.*....
 .664.598..''', 4361),
     )
-    known_result = None
+    known_result = 539590
 
     def __init__(self, puzzle_input=None):
         super().__init__(puzzle_input)
@@ -84,7 +84,7 @@ class DayPart2(AoCFramework):
 ...$.*....
 .664.598..''', 467835),
     )
-    known_result = None
+    known_result = 80703636
 
     def go(self):
         raw_split: str = self.linesplitted
