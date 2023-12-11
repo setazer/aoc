@@ -33,7 +33,7 @@ class DayPart1(AoCFramework):
 .......#..
 #...#.....''', 374),
     )
-    known_result = None
+    known_result = 9627977
 
     def go(self):
         raw_split: list = self.linesplitted
@@ -51,7 +51,7 @@ class DayPart1(AoCFramework):
         return sum(manhattan(*pair) for pair in combinations(galaxies, 2))
 
 
-# DayPart1()
+DayPart1()
 
 
 class DayPart2(AoCFramework):
@@ -77,7 +77,7 @@ class DayPart2(AoCFramework):
 # .......#..
 # #...#.....''', 8410),
     )
-    known_result = None
+    known_result = 644248339497
 
     def go(self):
         raw_split: list = self.linesplitted
