@@ -12,8 +12,7 @@ def is_safe(report):
 
 def is_salvagable(report: list):
     for i, _ in enumerate(report):
-        salvage = report.copy()
-        salvage.pop(i)
+        salvage = report[:i] + report[i+1:]
         if is_safe(salvage):
             return True
     return False
@@ -28,7 +27,7 @@ class DayPart1(AoCFramework):
 8 6 4 4 1
 1 3 6 7 9''', 2),
     )
-    known_result = None
+    known_result = 269
 
     def go(self):
         raw_split = self.linesplitted
@@ -53,7 +52,7 @@ class DayPart2(AoCFramework):
 8 6 4 4 1
 1 3 6 7 9''', 4),
     )
-    known_result = None
+    known_result = 337
 
     def go(self):
         raw_split = self.linesplitted

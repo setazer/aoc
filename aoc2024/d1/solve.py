@@ -41,7 +41,7 @@ class DayPart2(AoCFramework):
 3   9
 3   3''', 31),
     )
-    known_result = None
+    known_result = 19097157
 
     def go(self):
         l1, l2 = DayPart1._parse_data(self)
